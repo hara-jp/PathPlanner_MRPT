@@ -1,6 +1,6 @@
 ﻿// -*- C++ -*-
 /*!
- * @file PathPlanner_MRPTComp.cpp
+ * @file PathPlanner_MRPTTestComp.cpp
  * @brief Standalone component
  * @date $Date$
  *
@@ -11,16 +11,16 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
-#include "PathPlanner_MRPT.h"
+#include "PathPlanner_MRPTTest.h"
 
 
 void MyModuleInit(RTC::Manager* manager)
 {
-  PathPlanner_MRPTInit(manager);
+  PathPlanner_MRPTTestInit(manager);
   RTC::RtcBase* comp;
 
   // Create a component
-  comp = manager->createComponent("PathPlanner_MRPT");
+  comp = manager->createComponent("PathPlanner_MRPTTest");
 
   if (comp==NULL)
   {
@@ -75,6 +75,9 @@ int main (int argc, char** argv)
 {
   RTC::Manager* manager;
   manager = RTC::Manager::init(argc, argv);
+
+  // Initialize manager
+  manager->init(argc, argv);
 
   // Set module initialization proceduer
   // This procedure will be invoked in activateManager() function.

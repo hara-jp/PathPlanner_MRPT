@@ -1,4 +1,4 @@
-PathPlanner_MRPT - 日本語
+﻿PathPlanner_MRPT - 日本語
 =======================
 
 
@@ -101,6 +101,10 @@ PathPlanner_MRPTは ``PathPlanner_MRPTComp`` を実行（ ``${prefix}/components
 debug            int                0                
 RobotRadius      float              0.35             
 maxSearchPathLength float              -1               
+pathDistanceTolerance float              0.5              
+goalHeadingTolerance float              0.5              
+goalDistanceTolerance float              0.5              
+pathHeadingTolerance float              0.5              
 ================ ================== ================ ====
 
 ポート

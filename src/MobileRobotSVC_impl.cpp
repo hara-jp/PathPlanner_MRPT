@@ -1,4 +1,4 @@
-// -*-C++-*-
+﻿// -*-C++-*-
 /*!
  * @file  MobileRobotSVC_impl.cpp
  * @brief Service implementation code of MobileRobot.idl
@@ -6,7 +6,6 @@
  */
 
 #include "MobileRobotSVC_impl.h"
-#include <iostream>
 
 #include <mrpt/slam/COccupancyGridMap2D.h>
 #ifdef WIN32
@@ -16,7 +15,6 @@
 #endif
 #include <mrpt/poses/CPose2D.h>
 
-
 #include "PathPlanner_MRPT.h"
 
 using namespace mrpt;
@@ -24,41 +22,36 @@ using namespace mrpt::slam;
 using namespace std;
 using namespace RTC;
 
-// End of example implementational code
-
 /*
  * Example implementational code for IDL interface RTC::PathPlanner
  */
-
-
-PathPlannerSVC_impl::PathPlannerSVC_impl()
+RTC_PathPlannerSVC_impl::RTC_PathPlannerSVC_impl()
 {
+  // Please add extra constructor code here.
   mrpt::poses::CPose2D start(0,0,0);
   mrpt::poses::CPose2D goal(0,0,0);
 }
 
 
-PathPlannerSVC_impl::~PathPlannerSVC_impl()
+RTC_PathPlannerSVC_impl::~RTC_PathPlannerSVC_impl()
 {
   // Please add extra destructor code here.
 }
 
-
-/*
- * Methods corresponding to IDL attributes and operations
- */
-void PathPlannerSVC_impl::setStart(const RTC::Pose2D & tp, const RTC::OGMap & map){
+void RTC_PathPlannerSVC_impl::setStart(const RTC::Pose2D & tp, const RTC::OGMap & map){
 	start.x(tp.position.x);
 	start.y(tp.position.y);
 	start.phi(tp.heading);
+	return;
 	}
-void PathPlannerSVC_impl::setGoal(const RTC::Pose2D & tp, const RTC::OGMap & map){
+void RTC_PathPlannerSVC_impl::setGoal(const RTC::Pose2D & tp, const RTC::OGMap & map){
 	goal.x(tp.position.x);
 	goal.y(tp.position.y);
 	goal.phi(tp.heading);
+	return;
 	}
 
-void PathPlannerSVC_impl::OGMapToCOccupancyGridMap(RTC::OGMap ogmap, COccupancyGridMap2D *gridmap) {
+void RTC_PathPlannerSVC_impl::OGMapToCOccupancyGridMap(RTC::OGMap ogmap, COccupancyGridMap2D *gridmap) {
 	gridmap->setSize(
 		-ogmap.config.origin.position.x,
 		ogmap.map.width * ogmap.config.xScale - ogmap.config.origin.position.x,
@@ -92,11 +85,15 @@ void PathPlannerSVC_impl::OGMapToCOccupancyGridMap(RTC::OGMap ogmap, COccupancyG
 			}
 		}
 	}
-	gridmap->saveAsBitmapFile("C:\\testout.bmp");
+	gridmap->saveAsBitmapFile("testout.bmp");
 }
-RTC::RETURN_VALUE PathPlannerSVC_impl::planPath(const RTC::PathPlanParameter& param, RTC::Path2D_out outPath)
+
+/*
+ * Methods corresponding to IDL attributes and operations
+ */
+RTC::RETURN_VALUE RTC_PathPlannerSVC_impl::planPath(const RTC::PathPlanParameter& param, RTC::Path2D_out outPath)
 {
-	RETURN_VALUE result = RETVAL_OK;
+  RETURN_VALUE result = RETVAL_OK;
 	cout << "Start Path Planning..." << endl;
 	cout << "  Start: " << param.currentPose.position.x <<","<<param.currentPose.position.y << endl;
 	cout << "  Goal: " << param.targetPose.position.x <<","<<param.targetPose.position.y << "," << param.targetPose.heading << std::endl;
@@ -120,8 +117,9 @@ RTC::RETURN_VALUE PathPlannerSVC_impl::planPath(const RTC::PathPlanParameter& pa
 	std::deque <mrpt::math::TPoint2D> tPath;
 
 	pathPlanning.robotRadius = m_pRTC->m_robotRadius;
+
 	pathPlanning.computePath(gridmap, getStart(), getGoal(), tPath, notFound, this->getPathLength());
-	
+
 	//Any path was not found
 	if(notFound){
 		cout << "No path was founded"<<endl;
@@ -176,13 +174,6 @@ RTC::RETURN_VALUE PathPlannerSVC_impl::planPath(const RTC::PathPlanParameter& pa
 
 
 
-
-
-
-
-
-
 // End of example implementational code
-
 
 

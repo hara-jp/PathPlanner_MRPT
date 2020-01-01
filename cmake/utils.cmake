@@ -17,7 +17,7 @@ endmacro(DISSECT_VERSION)
 # output is placed in the variable pointed at by _output.
 macro(FILTER_LIST _list _pattern _output)
     set(${_output})
-    foreach(_item ${_list})
+    foreach(_item ${${_list}})
         if("${_item}" MATCHES ${_pattern})
             set(${_output} ${${_output}} ${_item})
         endif("${_item}" MATCHES ${_pattern})

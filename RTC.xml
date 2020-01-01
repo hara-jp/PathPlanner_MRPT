@@ -1,86 +1,47 @@
-<rtc:RtcProfile xmlns:rtc="http://www.openrtp.org/namespaces/rtc" xmlns:rtcDoc="http://www.openrtp.org/namespaces/rtc_doc" xmlns:rtcExt="http://www.openrtp.org/namespaces/rtc_ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" rtc:id="RTC:Sugar Sweet Robotics:Navigation:PathPlanner_MRPT:1.1.0" rtc:version="0.2">
-  <rtc:BasicInfo rtc:activityType="PERIODIC" rtc:category="Navigation" rtc:componentKind="DataFlowComponent" rtc:componentType="STATIC" rtc:creationDate="2014-09-05T12:54:27+09:00" rtc:description="Path Planner MRPT component" rtc:executionRate="1000.0" rtc:executionType="ExtTrigExecutionContext" rtc:maxInstances="1" rtc:name="PathPlanner_MRPT" rtc:updateDate="2014-09-05T12:54:27+09:00" rtc:vendor="Sugar Sweet Robotics" rtc:version="1.1.0" rtcExt:saveProject="PathPlanner_MRPT" xsi:type="rtcExt:basic_info_ext">
-    <rtcDoc:Doc rtcDoc:algorithm="" rtcDoc:creator="" rtcDoc:description="" rtcDoc:inout="" rtcDoc:license="" rtcDoc:reference=""/>
-  </rtc:BasicInfo>
-  <rtc:Language rtc:kind="C++" xsi:type="rtcExt:language_ext"/>
-  <rtc:Actions>
-    <rtc:OnInitialize rtc:implemented="true" xsi:type="rtcDoc:action_status_doc">
-      <rtcDoc:Doc rtcDoc:description="" rtcDoc:postCondition="" rtcDoc:preCondition=""/>
-    </rtc:OnInitialize>
-    <rtc:OnFinalize rtc:implemented="false" xsi:type="rtcDoc:action_status_doc">
-      <rtcDoc:Doc rtcDoc:description="" rtcDoc:postCondition="" rtcDoc:preCondition=""/>
-    </rtc:OnFinalize>
-    <rtc:OnStartup rtc:implemented="false" xsi:type="rtcDoc:action_status_doc">
-      <rtcDoc:Doc rtcDoc:description="" rtcDoc:postCondition="" rtcDoc:preCondition=""/>
-    </rtc:OnStartup>
-    <rtc:OnShutdown rtc:implemented="false" xsi:type="rtcDoc:action_status_doc">
-      <rtcDoc:Doc rtcDoc:description="" rtcDoc:postCondition="" rtcDoc:preCondition=""/>
-    </rtc:OnShutdown>
-    <rtc:OnActivated rtc:implemented="true" xsi:type="rtcDoc:action_status_doc">
-      <rtcDoc:Doc rtcDoc:description="" rtcDoc:postCondition="" rtcDoc:preCondition=""/>
-    </rtc:OnActivated>
-    <rtc:OnDeactivated rtc:implemented="true" xsi:type="rtcDoc:action_status_doc">
-      <rtcDoc:Doc rtcDoc:description="" rtcDoc:postCondition="" rtcDoc:preCondition=""/>
-    </rtc:OnDeactivated>
-    <rtc:OnAborting rtc:implemented="false" xsi:type="rtcDoc:action_status_doc">
-      <rtcDoc:Doc rtcDoc:description="" rtcDoc:postCondition="" rtcDoc:preCondition=""/>
-    </rtc:OnAborting>
-    <rtc:OnError rtc:implemented="false" xsi:type="rtcDoc:action_status_doc">
-      <rtcDoc:Doc rtcDoc:description="" rtcDoc:postCondition="" rtcDoc:preCondition=""/>
-    </rtc:OnError>
-    <rtc:OnReset rtc:implemented="false" xsi:type="rtcDoc:action_status_doc">
-      <rtcDoc:Doc rtcDoc:description="" rtcDoc:postCondition="" rtcDoc:preCondition=""/>
-    </rtc:OnReset>
-    <rtc:OnExecute rtc:implemented="false" xsi:type="rtcDoc:action_status_doc">
-      <rtcDoc:Doc rtcDoc:description="" rtcDoc:postCondition="" rtcDoc:preCondition=""/>
-    </rtc:OnExecute>
-    <rtc:OnStateUpdate rtc:implemented="false" xsi:type="rtcDoc:action_status_doc">
-      <rtcDoc:Doc rtcDoc:description="" rtcDoc:postCondition="" rtcDoc:preCondition=""/>
-    </rtc:OnStateUpdate>
-    <rtc:OnRateChanged rtc:implemented="false" xsi:type="rtcDoc:action_status_doc">
-      <rtcDoc:Doc rtcDoc:description="" rtcDoc:postCondition="" rtcDoc:preCondition=""/>
-    </rtc:OnRateChanged>
-    <rtc:OnAction rtc:implemented="false" xsi:type="rtcDoc:action_status_doc">
-      <rtcDoc:Doc rtcDoc:description="" rtcDoc:postCondition="" rtcDoc:preCondition=""/>
-    </rtc:OnAction>
-    <rtc:OnModeChanged rtc:implemented="false" xsi:type="rtcDoc:action_status_doc">
-      <rtcDoc:Doc rtcDoc:description="" rtcDoc:postCondition="" rtcDoc:preCondition=""/>
-    </rtc:OnModeChanged>
-  </rtc:Actions>
-  <rtc:ServicePorts rtc:name="pathPlanner" rtcExt:position="LEFT" xsi:type="rtcExt:serviceport_ext">
-    <rtc:ServiceInterface rtc:direction="Provided" rtc:idlFile="C:\Users\ogata\Desktop\MappingRTCs\PathPlanner_MRPT\idl\MobileRobot.idl" rtc:instanceName="PathPlanner" rtc:name="PathPlanner" rtc:path="C:\Users\ogata\Desktop\MappingRTCs\PathPlanner_MRPT\idl\" rtc:type="RTC::PathPlanner" rtcExt:variableName="pathPlanner" xsi:type="rtcExt:serviceinterface_ext">
-      <rtcDoc:Doc rtcDoc:description="" rtcDoc:license="" rtcDoc:number="" rtcDoc:occerrence="" rtcDoc:operation="" rtcDoc:semantics="" rtcDoc:type="" rtcDoc:unit="" xsi:type="rtcExt:dataport_ext"/>
-    </rtc:ServiceInterface>
-    <rtcDoc:Doc rtcDoc:description="" rtcDoc:license="" rtcDoc:number="" rtcDoc:occerrence="" rtcDoc:operation="" rtcDoc:semantics="" rtcDoc:type="" rtcDoc:unit="" xsi:type="rtcExt:dataport_ext"/>
-  </rtc:ServicePorts>
-  <rtc:ConfigurationSet>
-    <rtc:Configuration rtc:defaultValue="0" rtc:name="debug" rtc:type="int" rtc:unit="" rtcExt:variableName="debug" xsi:type="rtcExt:configuration_ext">
-      <rtcDoc:Doc rtcDoc:description="" rtcDoc:license="" rtcDoc:number="" rtcDoc:occerrence="" rtcDoc:operation="" rtcDoc:semantics="" rtcDoc:type="" rtcDoc:unit="" xsi:type="rtcExt:dataport_ext"/>
-      <rtcExt:Properties rtcExt:name="__widget__" rtcExt:value="text"/>
-    </rtc:Configuration>
-    <rtc:Configuration rtc:defaultValue="0.35" rtc:name="RobotRadius" rtc:type="float" rtc:unit="" rtcExt:variableName="robotRadius" xsi:type="rtcExt:configuration_ext">
-      <rtcDoc:Doc rtcDoc:description="" rtcDoc:license="" rtcDoc:number="" rtcDoc:occerrence="" rtcDoc:operation="" rtcDoc:semantics="" rtcDoc:type="" rtcDoc:unit="" xsi:type="rtcExt:dataport_ext"/>
-      <rtcExt:Properties rtcExt:name="__widget__" rtcExt:value="text"/>
-    </rtc:Configuration>
-    <rtc:Configuration rtc:defaultValue="-1" rtc:name="maxSearchPathLength" rtc:type="float" rtc:unit="" rtcExt:variableName="" xsi:type="rtcExt:configuration_ext">
-      <rtcDoc:Doc rtcDoc:description="" rtcDoc:license="" rtcDoc:number="" rtcDoc:occerrence="" rtcDoc:operation="" rtcDoc:semantics="" rtcDoc:type="" rtcDoc:unit="" xsi:type="rtcExt:dataport_ext"/>
-      <rtcExt:Properties rtcExt:name="__widget__" rtcExt:value="text"/>
-    </rtc:Configuration>
-    <rtc:Configuration rtc:defaultValue="0.5" rtc:name="pathDistanceTolerance" rtc:type="string" rtc:unit="" rtcExt:variableName="pathDistanceTolerance" xsi:type="rtcExt:configuration_ext">
-      <rtcDoc:Doc rtcDoc:description="" rtcDoc:license="" rtcDoc:number="" rtcDoc:occerrence="" rtcDoc:operation="" rtcDoc:semantics="" rtcDoc:type="" rtcDoc:unit="" xsi:type="rtcExt:dataport_ext"/>
-      <rtcExt:Properties rtcExt:name="__widget__" rtcExt:value="text"/>
-    </rtc:Configuration>
-    <rtc:Configuration rtc:defaultValue="0.5" rtc:name="goalHeadingTolerance" rtc:type="string" rtc:unit="" rtcExt:variableName="goalHeadingTolerance" xsi:type="rtcExt:configuration_ext">
-      <rtcDoc:Doc rtcDoc:description="" rtcDoc:license="" rtcDoc:number="" rtcDoc:occerrence="" rtcDoc:operation="" rtcDoc:semantics="" rtcDoc:type="" rtcDoc:unit="" xsi:type="rtcExt:dataport_ext"/>
-      <rtcExt:Properties rtcExt:name="__widget__" rtcExt:value="text"/>
-    </rtc:Configuration>
-    <rtc:Configuration rtc:defaultValue="0.5" rtc:name="goalDistanceTolerance" rtc:type="string" rtc:unit="" rtcExt:variableName="goalDistanceTolerance" xsi:type="rtcExt:configuration_ext">
-      <rtcDoc:Doc rtcDoc:description="" rtcDoc:license="" rtcDoc:number="" rtcDoc:occerrence="" rtcDoc:operation="" rtcDoc:semantics="" rtcDoc:type="" rtcDoc:unit="" xsi:type="rtcExt:dataport_ext"/>
-      <rtcExt:Properties rtcExt:name="__widget__" rtcExt:value="text"/>
-    </rtc:Configuration>
-    <rtc:Configuration rtc:defaultValue="0.5" rtc:name="pathHeadingTolerance" rtc:type="string" rtc:unit="" rtcExt:variableName="pathHeadingTolerance" xsi:type="rtcExt:configuration_ext">
-      <rtcDoc:Doc rtcDoc:description="" rtcDoc:license="" rtcDoc:number="" rtcDoc:occerrence="" rtcDoc:operation="" rtcDoc:semantics="" rtcDoc:type="" rtcDoc:unit="" xsi:type="rtcExt:dataport_ext"/>
-      <rtcExt:Properties rtcExt:name="__widget__" rtcExt:value="text"/>
-    </rtc:Configuration>
-  </rtc:ConfigurationSet>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rtc:RtcProfile rtc:version="0.2" rtc:id="RTC:Sugar Sweet Robotics:Navigation:PathPlanner_MRPT:1.1.0" xmlns:rtc="http://www.openrtp.org/namespaces/rtc" xmlns:rtcExt="http://www.openrtp.org/namespaces/rtc_ext" xmlns:rtcDoc="http://www.openrtp.org/namespaces/rtc_doc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <rtc:BasicInfo xsi:type="rtcExt:basic_info_ext" rtcExt:saveProject="PathPlanner_MRPT" rtc:updateDate="2019-12-07T08:49:08+09:00" rtc:creationDate="2014-09-05T12:54:27+09:00" rtc:version="1.1.0" rtc:vendor="Sugar Sweet Robotics" rtc:maxInstances="1" rtc:executionType="ExtTrigExecutionContext" rtc:executionRate="1000.0" rtc:description="Path Planner MRPT component" rtc:category="Navigation" rtc:componentKind="DataFlowComponent" rtc:activityType="PERIODIC" rtc:componentType="STATIC" rtc:name="PathPlanner_MRPT"/>
+    <rtc:Actions>
+        <rtc:OnInitialize xsi:type="rtcDoc:action_status_doc" rtc:implemented="true"/>
+        <rtc:OnFinalize xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnStartup xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnShutdown xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnActivated xsi:type="rtcDoc:action_status_doc" rtc:implemented="true"/>
+        <rtc:OnDeactivated xsi:type="rtcDoc:action_status_doc" rtc:implemented="true"/>
+        <rtc:OnAborting xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnError xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnReset xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnExecute xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnStateUpdate xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnRateChanged xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnAction xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnModeChanged xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+    </rtc:Actions>
+    <rtc:ConfigurationSet>
+        <rtc:Configuration xsi:type="rtcExt:configuration_ext" rtcExt:variableName="debug" rtc:unit="" rtc:defaultValue="0" rtc:type="int" rtc:name="debug">
+            <rtcExt:Properties rtcExt:value="text" rtcExt:name="__widget__"/>
+        </rtc:Configuration>
+        <rtc:Configuration xsi:type="rtcExt:configuration_ext" rtcExt:variableName="robotRadius" rtc:unit="" rtc:defaultValue="0.35" rtc:type="float" rtc:name="RobotRadius">
+            <rtcExt:Properties rtcExt:value="text" rtcExt:name="__widget__"/>
+        </rtc:Configuration>
+        <rtc:Configuration xsi:type="rtcExt:configuration_ext" rtcExt:variableName="" rtc:unit="" rtc:defaultValue="-1" rtc:type="float" rtc:name="maxSearchPathLength">
+            <rtcExt:Properties rtcExt:value="text" rtcExt:name="__widget__"/>
+        </rtc:Configuration>
+        <rtc:Configuration xsi:type="rtcExt:configuration_ext" rtcExt:variableName="pathDistanceTolerance" rtc:unit="" rtc:defaultValue="0.5" rtc:type="float" rtc:name="pathDistanceTolerance">
+            <rtcExt:Properties rtcExt:value="text" rtcExt:name="__widget__"/>
+        </rtc:Configuration>
+        <rtc:Configuration xsi:type="rtcExt:configuration_ext" rtcExt:variableName="goalHeadingTolerance" rtc:unit="" rtc:defaultValue="0.5" rtc:type="float" rtc:name="goalHeadingTolerance">
+            <rtcExt:Properties rtcExt:value="text" rtcExt:name="__widget__"/>
+        </rtc:Configuration>
+        <rtc:Configuration xsi:type="rtcExt:configuration_ext" rtcExt:variableName="goalDistanceTolerance" rtc:unit="" rtc:defaultValue="0.5" rtc:type="float" rtc:name="goalDistanceTolerance">
+            <rtcExt:Properties rtcExt:value="text" rtcExt:name="__widget__"/>
+        </rtc:Configuration>
+        <rtc:Configuration xsi:type="rtcExt:configuration_ext" rtcExt:variableName="pathHeadingTolerance" rtc:unit="" rtc:defaultValue="0.5" rtc:type="float" rtc:name="pathHeadingTolerance">
+            <rtcExt:Properties rtcExt:value="text" rtcExt:name="__widget__"/>
+        </rtc:Configuration>
+    </rtc:ConfigurationSet>
+    <rtc:ServicePorts xsi:type="rtcExt:serviceport_ext" rtcExt:position="LEFT" rtc:name="pathPlanner">
+        <rtc:ServiceInterface xsi:type="rtcExt:serviceinterface_ext" rtcExt:variableName="pathPlanner" rtc:path="" rtc:type="RTC::PathPlanner" rtc:idlFile="/home/hara/.openrtp/idl/MobileRobot.idl" rtc:instanceName="PathPlanner" rtc:direction="Provided" rtc:name="PathPlanner"/>
+    </rtc:ServicePorts>
+    <rtc:Language xsi:type="rtcExt:language_ext" rtc:kind="C++"/>
 </rtc:RtcProfile>
